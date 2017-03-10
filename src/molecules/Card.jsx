@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Heading } from '../atoms';
 
 import Button from './Button'
 import Rating from './Rating'
@@ -11,7 +12,7 @@ import styles from './Card.css'
       {props.cardData.map((card) =>
         <div className={styles.card}>
           <img src={card.image} alt="card"/>
-          <h2 children={card.heading} />
+          <Heading level={2}>{card.heading}</Heading>
           <Rating value={4} />
           <p>{card.text}</p>
           <Button>Add to Cart</Button>
