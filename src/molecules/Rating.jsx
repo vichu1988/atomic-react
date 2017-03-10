@@ -1,20 +1,19 @@
+/**
+ Molecule - Star Rating with clickable buttons
+**/
 
 import React from 'react'
 //import skeleton from './skeleton'
 import styles from './Rating.css'
-
-/**
- * Star rating Molecule with clickable buttons
- */
 
 const Rating = ({
   value,
   onClick,
   ...props
 }) => {
+  
  // const { fontSizes, colors } = { ...skeleton}
 
- 
   const stars = Array.from({ length: 5 }, (a, b) => b)
 
   const sx = {
@@ -36,7 +35,8 @@ const Rating = ({
     }
   }
 
-const gray='#eaeaea'
+  const gray='#eaeaea';
+
   const getEmptyStyle = (i) => {
     const active = i < value
     const color = active ? null : gray
@@ -66,7 +66,7 @@ const gray='#eaeaea'
   }
 
   return (
-<a className={styles.rating}href="" onClick={handleClick()}>
+    <a className={styles.rating}href="" onClick={handleClick()}>
       {stars.map((s) => (
         <span
           key={s}
@@ -88,4 +88,3 @@ Rating.propTypes = {
 }
 
 export default Rating
-
