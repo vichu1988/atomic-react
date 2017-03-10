@@ -15,8 +15,13 @@ const Heading = ({ children, level, classname }) => {
      {level === 4 ? <h4 className={classname}>{children}</h4> : null}
      {level === 5 ? <h5 className={classname}>{children}</h5> : null}
      {level === 6 ? <h6 className={classname}>{children}</h6> : null}
+     {(level === 0 || level > 6) ? <h1 className={classname}>{children}</h1> : null}
    </div>
   )
+}
+
+Heading.defaultProps = {
+  level: 1
 }
 
 export default Heading;
