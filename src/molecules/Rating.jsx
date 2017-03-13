@@ -1,7 +1,7 @@
 
-import React from 'react'
-//import skeleton from './skeleton'
-import styles from './Rating.css'
+import React from 'react';
+// import skeleton from './skeleton'
+import styles from './Rating.css';
 
 /**
  * Star rating Molecule with clickable buttons
@@ -9,13 +9,12 @@ import styles from './Rating.css'
 
 const Rating = ({
   value,
-  onClick,
-  ...props
+  onClick
 }) => {
- // const { fontSizes, colors } = { ...skeleton}
+  // const { fontSizes, colors } = { ...skeleton}
 
- 
-  const stars = Array.from({ length: 5 }, (a, b) => b)
+
+  const stars = Array.from({ length: 5 }, (a, b) => b);
 
   const sx = {
     root: {
@@ -34,19 +33,19 @@ const Rating = ({
       backgroundColor: 'transparent',
       cursor: onClick ? 'pointer' : null
     }
-  }
+  };
 
-const gray='#eaeaea'
+  const gray = '#eaeaea';
   const getEmptyStyle = (i) => {
-    const active = i < value
-    const color = active ? null : gray
-    return { color }
-  }
+    const active = i < value;
+    const color = active ? null : gray;
+    return { color };
+  };
 
   const getActiveStyle = (i) => {
-    const active = i < value
-    const display = active ? null : 'none'
-    const clip = value > i && value < i + 1 ? 'rect(0, .5em, 1em, 0)' : null
+    const active = i < value;
+    const display = active ? null : 'none';
+    const clip = value > i && value < i + 1 ? 'rect(0, .5em, 1em, 0)' : null;
 
     return {
       position: 'absolute',
@@ -54,38 +53,42 @@ const gray='#eaeaea'
       left: 0,
       display,
       clip
-    }
-  }
+    };
+  };
 
   const handleClick = (i) => {
-    return (e) => {
+    return () => {
       if (onClick) {
-        onClick(i + 1)
+        onClick(i + 1);
       }
-    }
-  }
+    };
+  };
 
   return (
-<a className={styles.rating}href="" onClick={handleClick()}>
+    <a
+      className={styles.rating}
+      href=""
+      onClick={handleClick()}
+    >
       {stars.map((s) => (
         <span
           key={s}
           style={sx.star}
-          >
+        >
           <span style={getEmptyStyle(s)}>☆ </span>
           <span style={getActiveStyle(s)}>★</span>
         </span>
       ))}
     </a>
-  )
-}
+  );
+};
 
 Rating.propTypes = {
   /** Number of star rating from 1 to 5 */
   value: React.PropTypes.number,
   /** Click handler - returns index of star clicked */
   onClick: React.PropTypes.func
-}
+};
 
-export default Rating
+export default Rating;
 
