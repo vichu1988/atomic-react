@@ -28,6 +28,7 @@
     "file-loader": "0.10.0",
     "filesize": "3.3.0",
     "fs-extra": "0.30.0",
+    "ghooks": "^2.0.0",
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.3",
@@ -54,7 +55,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "eslint --ext .js --ext .jsx src",
+    "lint:fixjs": "eslint --ext .js --ext .jsx src --fix"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -80,12 +83,14 @@
       "^react-native$": "react-native-web"
     }
   },
+  "config":{
+    "ghooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "babel": {
     "presets": [
       "react-app"
     ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   }
 }
