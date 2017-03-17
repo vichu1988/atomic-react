@@ -1,25 +1,33 @@
 
-import React from 'react'
-import { Heading } from '../atoms';
+import React, { PropTypes } from 'react';
 
-import Button from './Button'
-import Rating from './Rating'
-import styles from './Card.css'
+import Button from './Button';
+import Rating from './Rating';
+import styles from './Card.css';
 
- const Card = (props) => {
+const Card = (props) => {
+  const cardDetails = (props.cardData !== null) ? props.cardData : null;
   return (
     <div className={styles.cardContainer}>
-      {props.cardData.map((card) =>
-        <div className={styles.card}>
-          <img src={card.image} alt="card"/>
-          <Heading level={2}>{card.heading}</Heading>
+      {cardDetails && cardDetails.map((card, index) =>
+        <div className={styles.card} key={`key-${index}`}>
+          <img src={card.image} alt={card.heading}/>
+          <h2 children={card.heading} />
           <Rating value={4} />
-          <p>{card.text}</p>
-          <Button>Add to Cart</Button>
+          <p>{card.text} </p>
+          <Button> Add to Cart</Button>
+
         </div>
       )}
     </div>
-  )   
-}
+  );
+};
 
-export default Card
+Card.propTypes = {
+  /**
+   * Card Data
+  */
+  cardData: PropTypes.arrayOf(PropTypes.shape({}))
+};
+
+export default Card;
