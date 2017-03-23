@@ -66,7 +66,7 @@ const Rating = ({
 
   return (
     <a
-      className={styles.rating}
+      className="rating"
       href=""
       onClick={handleClick()}
     >

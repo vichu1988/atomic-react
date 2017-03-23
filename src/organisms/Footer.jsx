@@ -1,18 +1,21 @@
 import React, { PropTypes } from 'react';
 import styles from './Footer.css';
+import classnames from 'classnames';
 
 
 const Footer = ({ ...props }) => {
-  return (
-    <div className={styles.footer}>
 
-      <ul>
-        {props.links.map((link, index) =>
+  const { currentYear, links, theme } = props;
+
+  return (
+    <div className={classnames('footer', 'acss-footer', `acss-theme-${theme}`)}>
+      <ul className="links">
+        {links.map((link, index) =>
           <li key={`key-${index}`}><a key={link.name} href={link.url}>{link.title}</a></li>
         )}
       </ul>
 
-      <span> © Copyright {props.currentYear} mySite.com </span>
+      <span> © Copyright {currentYear} mySite.com </span>
     </div>
   );
 };
