@@ -1,4 +1,5 @@
-# Atomic React
+![screenshot](https://preview.ibb.co/gWSEwF/atomic_react_v4_med.png)
+
 An opinionated approach to building React Components applying Atomic Design Pattern
 
 ## Overview
