@@ -1,4 +1,4 @@
-![screenshot](https://preview.ibb.co/gWSEwF/atomic_react_v4_med.png)
+# <img src='https://preview.ibb.co/gWSEwF/atomic_react_v4_med.png' height='100'>
 
 An opinionated approach to building React Components applying Atomic Design Pattern
 
