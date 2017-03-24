@@ -1,4 +1,4 @@
-# atomic-react
+# Atomic React
 An opinionated approach to building React Components applying Atomic Design Pattern
 
 ## Overview
