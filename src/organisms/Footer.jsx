@@ -1,10 +1,8 @@
 import React, { PropTypes } from 'react';
-import styles from './Footer.css';
+import './Footer.css';
 import classnames from 'classnames';
 
-
 const Footer = ({ ...props }) => {
-
   const { currentYear, links, theme } = props;
 
   return (
@@ -15,7 +13,7 @@ const Footer = ({ ...props }) => {
         )}
       </ul>
 
-      <span> © Copyright {currentYear} mySite.com </span>
+      <span> &copy; Copyright {currentYear} mySite.com </span>
     </div>
   );
 };
@@ -28,7 +26,11 @@ Footer.propTypes = {
   /**
    * Current Year
   */
-  currentYear: PropTypes.number
+  currentYear: PropTypes.number,
+  /**
+  * Theme
+  */
+  theme: PropTypes.oneOf(['light', 'dark'])
 };
 
 export default Footer;

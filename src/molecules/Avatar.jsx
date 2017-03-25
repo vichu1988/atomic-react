@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import styles from './Avatar.css';
-
+import './Avatar.css';
 
 const Avatar = ({ ...props }) => {
   return (

@@ -4,10 +4,9 @@ import classnames from 'classnames';
 
 import Button from './Button';
 import Rating from './Rating';
-import styles from './Card.css';
+import './Card.css';
 
 const Card = (props) => {
-
   const { cardData, theme } = props;
   const cardDetails = (cardData !== null) ? cardData : null;
   return (

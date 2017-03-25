@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
 
-import styles from './Panel.css';
+import './Panel.css';
 import classnames from 'classnames';
 
 const Panel = ({ children, ...props }) => {
-
   const { heading, theme } = props;
 
   return (
