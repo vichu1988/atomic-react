@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { Header, Footer, CardContainer } from './organisms';
 import { Panel, Grid } from './molecules';
 import classnames from 'classnames';
-/* import { Card, Button } from './molecules'; */
 
-
-import styles from './App.css';
-// import logo from './logo.svg';
+import './App.css';
+import config from './data/config.json';
 
 const footerLinks = [
   { title: 'Home', url: 'http://www.yahoo.com' },
@@ -17,7 +15,7 @@ const footerLinks = [
 class App extends Component {
   render() {
 
-    const theme = 'light'; // TODO: Fetch this from config store.
+    const theme = config.theme;
 
     return (
       <div className={classnames('app', `acss-theme-${theme}`, 'acss-background-primary')}>

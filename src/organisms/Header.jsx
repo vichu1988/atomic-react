@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react';
 
 import { Avatar } from '../molecules';
-import styles from './Header.css';
+import './Header.css';
 import classnames from 'classnames';
 
 const Header = (props) => {
-
   const { theme } = props;
 
   return (
@@ -19,7 +18,7 @@ const Header = (props) => {
       <h1 className={classnames('logo', `acss-theme-${theme}`, 'acss-header')}>Atomic React</h1>
 
     </div>
-  )
+  );
 };
 
 Header.defaultProps = {
