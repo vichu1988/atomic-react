@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { Avatar } from '../molecules';
+import { Avatar, Logo } from '../molecules';
 import './Header.css';
 import classnames from 'classnames';
 
@@ -15,8 +15,12 @@ const Header = (props) => {
         picUrl="https://upload.wikimedia.org/wikipedia/commons/c/c1/J.J_Thomson.jpg"
         altTag="Vinci Rufus"
       />
-      <h1 className={classnames('logo', `acss-theme-${theme}`, 'acss-header')}>Atomic React</h1>
-
+      <div className="branding">
+        <Logo
+          imgWidth={80}
+        />
+        <h1 className={classnames(`acss-theme-${theme}`, 'acss-header')}>Atomic React</h1>
+      </div>
     </div>
   );
 };
