@@ -1,3 +1,5 @@
 {
-  "theme": "light"
+  "brnadName": "Atomic React",
+  "theme": "light",
+  "defaultLogo": "https://image.ibb.co/fNJGbF/atomic_react_logo_invert.png" 
 }
