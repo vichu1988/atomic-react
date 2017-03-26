@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Footer, CardContainer } from './organisms';
-import { Panel, Grid } from './molecules';
+import { Panel, Grid, Hero } from './molecules';
 import classnames from 'classnames';
 
 import './App.css';
@@ -20,6 +20,12 @@ class App extends Component {
     return (
       <div className={classnames('app', `acss-theme-${theme}`, 'acss-background-primary')}>
         <Header theme={theme}/>
+
+        <Hero 
+          backgroundImg="https://upload.wikimedia.org/wikipedia/commons/c/cc/Mira_the_star-by_Nasa_alt_crop.jpg"
+          imgWidth={100}
+          link="/"
+        />
         
         <Grid>
           <h2>Cards</h2>
