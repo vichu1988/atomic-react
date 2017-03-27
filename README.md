@@ -13,4 +13,4 @@ Clone the Repo
 `$npm start`
 
 ## Contribution
-Fork the repo add your code send us a PR.
+Fork the repo, add your code send us a PR.
