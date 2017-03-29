@@ -60,7 +60,7 @@ Hero.propTypes = {
   /**
   * Theme
   */
-  theme: PropTypes.string,
+  theme: PropTypes.oneOf(['light', 'dark']),
   /**
   * Heading
   */
