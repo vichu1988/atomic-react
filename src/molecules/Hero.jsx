@@ -1,23 +1,34 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 import './Hero.css';
 
 const Hero = (props) => {
-  const { backgroundImg, alt, imgWidth, link } = props;
+  const { backgroundImg, alt, imgWidth, link, theme, heading, subHeading, headingPosition } = props;
 
   const slide = () => {
     return (
-      <img
-        src={backgroundImg}
-        alt={alt}
-        width={`${imgWidth}%`}
-        className="hero-image"
-      />
+      <div className={classnames('slide', `acss-theme-${theme}`, `align-${headingPosition}`)}>
+        <img
+          src={backgroundImg}
+          alt={alt}
+          width={`${imgWidth}%`}
+          className="hero-image"
+        />
+        <div className={classnames('heading', `align-${headingPosition}`)}>
+          {heading && (
+            <h1>{heading}</h1>
+          )}
+          {subHeading && (
+            <h2>{subHeading}</h2>
+          )}
+        </div>
+      </div>
     );
   };
 
   return (
-    <div>
+    <div className="hero">
       {(link !== undefined) ? (
         <a href={link}>
           {slide()}
@@ -45,7 +56,29 @@ Hero.propTypes = {
   /**
   * Slide Link
   */
-  link: PropTypes.string
+  link: PropTypes.string,
+  /**
+  * Theme
+  */
+  theme: PropTypes.string,
+  /**
+  * Heading
+  */
+  heading: PropTypes.string,
+  /**
+  * Sub Heading
+  */
+  subHeading: PropTypes.string,
+  /**
+  * Heading Alignment
+  */
+  headingPosition: PropTypes.oneOf(['left', 'center', 'right'])
+};
+
+Hero.defaultProps = {
+  theme: 'light',
+  headingPosition: 'left',
+  imgWidth: 100
 };
 
 export default Hero;
