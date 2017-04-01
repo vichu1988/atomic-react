@@ -18,7 +18,7 @@ Panel.propTypes = {
   /**
    * Children
   */
-  children: PropTypes.string,
+  children: PropTypes.node,
   /**
    * Heading
   */
