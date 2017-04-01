@@ -8,3 +8,4 @@ export { default as Grid } from './Grid';
 export { default as Logo } from './Logo';
 export { default as Hero } from './Hero';
 export { default as Navigation } from './Navigation';
+export { default as Tout } from './Tout';

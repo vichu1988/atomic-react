@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Footer, CardContainer } from './organisms';
-import { Panel, Grid, Hero, Navigation } from './molecules';
+import { Panel, Grid, Hero, Navigation, Tout } from './molecules';
 import classnames from 'classnames';
 
 import './App.css';
@@ -46,7 +46,15 @@ class App extends Component {
 
           <h2>Panel</h2>
           <Panel heading="This is Panel header" theme={theme}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet elementum dolor sed elementum. Quisque aliquam libero erat, at tempus quam malesuada in. Aliquam libero lectus, bibendum at magna sodales, dictum cursus mauris. Vestibulum blandit massa at orci finibus euismod. Nam convallis, purus et bibendum sodales, purus nisi euismod nunc, et tristique sapien lacus et metus. Aliquam elementum posuere arcu, at tempus ante sodales sed. Ut cursus, purus non rutrum eleifend, nulla mauris faucibus tellus, in auctor purus ex quis tellus. Aliquam erat volutpat. Donec et velit varius, porta ante ac, egestas nulla. Curabitur eu tellus ex. Donec at placerat elit. Aliquam erat volutpat. Fusce tempor quam et urna faucibus lobortis.
+
+          <Tout 
+            headline="This is a tout heading"
+            imgURL="http://placehold.it/350x250/"
+            destination="/"
+            theme={theme}
+          />
+
+          <p>Sir Joseph John Thomson (18 December 1856 – 30 August 1940) was an English physicist and Nobel laureate in physics, credited with the discovery and identification of the electron; and with the discovery of the first subatomic particle. He was elected as a fellow of the Royal Society of London and appointed to the Cavendish Professorship of Experimental Physics at the Cambridge University's Cavendish Laboratory in 1884. In 1897, Thomson showed that cathode rays were composed of previously unknown negatively charged particles, which he calculated must have bodies much smaller than atoms and a very large value for their charge-to-mass ratio.[3] Thomson is also credited with finding the first evidence for isotopes of a stable (non-radioactive) element in 1913, as part of his exploration into the composition of canal rays (positive ions). His experiments to determine the nature of positively charged particles, with Francis William Aston, were the first use of mass spectrometry and led to the development of the mass spectrograph. Thomson was awarded the 1906 Nobel Prize in Physics for his work on the conduction of electricity in gases. Seven of his students, including his son George Paget Thomson, also became Nobel Prize winners either in physics or in chemistry. His record is comparable only to that of the German physicist Arnold Sommerfeld.</p>
           </Panel>
         </Grid>
 
