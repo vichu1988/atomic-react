@@ -28,7 +28,7 @@ const Rating = ({ value, onClick }) => {
     }
   };
 
-  const gray = '#eaeaea';
+  const gray = '#9a9a9a';
   const getEmptyStyle = (i) => {
     const active = i < value;
     const color = active ? null : gray;
