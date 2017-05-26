@@ -1,4 +1,3 @@
-
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
 
@@ -14,8 +13,8 @@ const Card = (props) => {
       {cardDetails && cardDetails.map((card, index) =>
         <div className={classnames('card', `acss-theme-${theme}`, 'acss-background-secondary')} key={`key-${index}`}>
           <img src={card.image} alt={card.heading}/>
-          <h2 children={card.heading} />
-          <Rating value={4} />
+          <h2 children={card.heading}/>
+          <Rating value={4}/>
           <p>{card.text}</p>
           <Button>Add to Cart</Button>
         </div>
@@ -27,11 +26,11 @@ const Card = (props) => {
 Card.propTypes = {
   /**
    * Card Data
-  */
+   */
   cardData: PropTypes.arrayOf(PropTypes.shape({})),
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 

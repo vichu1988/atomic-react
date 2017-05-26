@@ -4,9 +4,9 @@ import { fetchCatalogCards } from '../actions/cardContainer-actions';
 
 import CardContainer from '../organisms/CardContainer';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ CardContainerPage }) => {
   return {
-    cardData: state.CardContinerPage.cardData
+    cardData: CardContainerPage.cardData
   };
 };
 

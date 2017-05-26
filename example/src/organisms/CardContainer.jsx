@@ -1,16 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Card } from '../../src/molecules/index';
+import { Card } from '../../../molecules/index';
 
 /* import styles from './CardContainer.css'; */
 //  const cards = Array.from({ length: 3 }, (c) => card)
 // const primary = /^\#/.test(colors.primary) ? colors.primary.replace('#', '') : '#666'
 // const primary = '#ff6600';
 
-
 class CardContainer extends Component {
   componentWillMount() {
-    this.props.fetchCatelogCards();
+    this.props.fetchCatalogCards();
   }
 
   render() {
@@ -28,15 +27,15 @@ class CardContainer extends Component {
 CardContainer.propTypes = {
   /**
    * Card Data as Object
-  */
+   */
   cardData: PropTypes.object,
   /**
    * Function called to get data
-  */
-  fetchCatelogCards: PropTypes.func,
+   */
+  fetchCatalogCards: PropTypes.func,
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 

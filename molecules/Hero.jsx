@@ -42,36 +42,36 @@ const Hero = (props) => {
 
 Hero.propTypes = {
   /**
-  * Background Image
-  */
+   * Background Image
+   */
   backgroundImg: PropTypes.string,
   /**
-  * Image Alt Text
-  */
+   * Image Alt Text
+   */
   alt: PropTypes.string,
   /**
-  * Background Image Width
-  */
+   * Background Image Width
+   */
   imgWidth: PropTypes.number,
   /**
-  * Slide Link
-  */
+   * Slide Link
+   */
   link: PropTypes.string,
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark']),
   /**
-  * Heading
-  */
+   * Heading
+   */
   heading: PropTypes.string,
   /**
-  * Sub Heading
-  */
+   * Sub Heading
+   */
   subHeading: PropTypes.string,
   /**
-  * Heading Alignment
-  */
+   * Heading Alignment
+   */
   headingPosition: PropTypes.oneOf(['left', 'center', 'right'])
 };
 

@@ -1,10 +1,11 @@
-.panel{}
+.panel {
+}
 
-.panelHeading{
+.panelHeading {
     padding: 0.5rem;
 }
 
-.panelBody{
+.panelBody {
     padding: 1rem;
     display: flex;
 }

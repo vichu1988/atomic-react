@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { Avatar, Logo } from '../../src/molecules/index';
+import { Avatar, Logo } from '../../../molecules/index';
 import './Header.css';
 import classnames from 'classnames';
 
@@ -8,7 +8,7 @@ const Header = (props) => {
   const { theme } = props;
 
   return (
-    <div className="header">
+    <header className={props.class}>
       <Avatar
         className="avatar"
         {...props}
@@ -21,7 +21,7 @@ const Header = (props) => {
         />
         <h1 className={classnames(`acss-theme-${theme}`, 'acss-header')}>Atomic React</h1>
       </div>
-    </div>
+    </header>
   );
 };
 
@@ -33,7 +33,8 @@ Header.propTypes = {
   /**
    * Theme
    */
-  theme: PropTypes.oneOf(['light', 'dark'])
+  theme: PropTypes.oneOf(['light', 'dark']),
+  class: PropTypes.string
 };
 
 export default Header;

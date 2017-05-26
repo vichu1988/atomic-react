@@ -9,7 +9,7 @@ const Tout = (props) => {
   return (
     <div className={classnames('tout', `acss-theme-${theme}`)}>
       <a href={destination}>
-        <img src={imgURL} alt={imgAlt} />
+        <img src={imgURL} alt={imgAlt}/>
         <div className="tout-copy">
           <h3>{headline}</h3>
         </div>
@@ -20,24 +20,24 @@ const Tout = (props) => {
 
 Tout.propTypes = {
   /**
-  * Tout Image URL
-  */
+   * Tout Image URL
+   */
   imgURL: PropTypes.string.isRequired,
   /**
-  * Tout Image Alt
-  */
+   * Tout Image Alt
+   */
   imgAlt: PropTypes.string,
   /**
-  * Tout destination URL
-  */
+   * Tout destination URL
+   */
   destination: PropTypes.string,
   /**
-  * Tout headline
-  */
+   * Tout headline
+   */
   headline: PropTypes.string,
   /**
-  * Tout theme
-  */
+   * Tout theme
+   */
   theme: PropTypes.string
 };
 

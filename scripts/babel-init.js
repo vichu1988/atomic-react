@@ -1,3 +1,5 @@
-/**
- * Created by vsury1 on 5/26/17.
- */
+// Init babel-register to start parsing the ES6 files.
+require('babel-register');
+const script = process.argv.slice(2)[1];
+if (script === 'build') process.env.NODE_ENV = 'production';
+require(`./${script}`);

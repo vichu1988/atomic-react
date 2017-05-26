@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-
 // Import of Styles could be as simple as importing the file like given below.
 import './Avatar.css';
 

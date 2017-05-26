@@ -10,8 +10,8 @@ const Grid = ({ children }) => {
 
 Grid.propTypes = {
   /**
-  * Grid
-  **/
+   * Grid
+   **/
   children: PropTypes.node.isRequired
 };
 

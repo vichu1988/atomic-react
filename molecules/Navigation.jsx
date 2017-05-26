@@ -26,16 +26,16 @@ const Navigation = (props) => {
 
 Navigation.propTypes = {
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark']),
   /**
    * Links
-  */
+   */
   links: PropTypes.arrayOf(PropTypes.shape({})),
   /**
-  * Nav Links Alignment
-  */
+   * Nav Links Alignment
+   */
   align: PropTypes.oneOf(['left', 'right'])
 };
 

@@ -17,15 +17,15 @@ const Panel = ({ children, ...props }) => {
 Panel.propTypes = {
   /**
    * Children
-  */
+   */
   children: PropTypes.node,
   /**
    * Heading
-  */
+   */
   heading: PropTypes.string,
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 

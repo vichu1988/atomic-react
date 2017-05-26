@@ -1,11 +1,17 @@
-const path = require('path');
-const fs = require('fs');
-const url = require('url');
-const envPublicUrl = process.env.PUBLIC_URL;
+import path from 'path';
+import fs from 'fs';
+import url from 'url';
 
+const envPublicUrl = process.env.PUBLIC_URL;
+const nodePaths = (process.env.NODE_PATH || '')
+  .split(process.platform === 'win32' ? ';' : ':')
+  .filter(Boolean)
+  .filter(folder => !path.isAbsolute(folder))
+  .map(resolveApp);
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebookincubator/create-react-app/issues/637
-var appDirectory = fs.realpathSync(process.cwd());
+const appDirectory = fs.realpathSync(process.cwd());
+
 function resolveApp(relativePath) {
   return path.resolve(appDirectory, relativePath);
 }
@@ -25,18 +31,12 @@ function resolveApp(relativePath) {
 // Otherwise, we risk importing Node.js core modules into an app instead of Webpack shims.
 // https://github.com/facebookincubator/create-react-app/issues/1023#issuecomment-265344421
 
-var nodePaths = (process.env.NODE_PATH || '')
-  .split(process.platform === 'win32' ? ';' : ':')
-  .filter(Boolean)
-  .filter(folder => !path.isAbsolute(folder))
-  .map(resolveApp);
-
 function ensureSlash(path, needsSlash) {
-  var hasSlash = path.endsWith('/');
+  const hasSlash = path.endsWith('/');
   if (hasSlash && !needsSlash) {
     return path.substr(path, path.length - 1);
   } else if (!hasSlash && needsSlash) {
-    return path + '/';
+    return `${path}/`;
   } else {
     return path;
   }
@@ -61,18 +61,19 @@ function getServedPath(appPackageJson) {
 }
 
 // config after eject: we're in ./config/
-module.exports = {
+export default {
   appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appPublic: resolveApp('example/public'),
+  appHtml: resolveApp('example/public/index.html'),
   appIndexJs: resolveApp('example/src/index.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('example/src'),
+  moleculeSrc: resolveApp('molecules'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('example/src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
-  nodePaths: nodePaths,
+  nodePaths,
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json'))
 };

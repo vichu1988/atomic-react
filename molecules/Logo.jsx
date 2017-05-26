@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import config from '../../public/data/config.json';
+import config from '../example/public/data/config.json';
 
 import './Logo.css';
 
@@ -20,20 +20,20 @@ const Logo = (props) => {
 
 Logo.propTypes = {
   /**
-  * Brand Logo
-  */
+   * Brand Logo
+   */
   src: PropTypes.string,
   /**
-  * Logo Alternative Text
-  */
+   * Logo Alternative Text
+   */
   alt: PropTypes.string,
   /**
-  * Logo URL
-  */
+   * Logo URL
+   */
   url: PropTypes.string,
   /**
-  * Image width
-  */
+   * Image width
+   */
   imgWidth: PropTypes.number
 };
 

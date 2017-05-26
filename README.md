@@ -8,7 +8,10 @@ Atomic React enables rapid development of web applications by using readily avai
 ## Reference Guides.
 The components being built follow the [Component Design Guidelines](https://github.com/areai51/react-component-design)
 
-## Setup
+## Molecules
+Building Blocks of the repo built on the guide above. 
+
+## Setup the example
 Clone the Repo
 
 `$npm i`

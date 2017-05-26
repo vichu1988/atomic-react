@@ -1,6 +1,6 @@
 {
   "name": "atomic-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -52,6 +52,7 @@
     "whatwg-fetch": "2.0.2"
   },
   "dependencies": {
+    "babel-register": "^6.24.1",
     "classnames": "^2.2.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -60,10 +61,13 @@
     "redux-thunk": "^1.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "lint": "eslint --ext .js --ext .jsx src",
+    "start": "node scripts/babel-init --s start",
+    "build": "node scripts/babel-init --s build",
+    "test": "node scripts/babel-init --s test --env=jsdom",
+    "lint:prehook": "npm run lint:molecules",
+    "lint": "npm run lint:molecules > Lint_Molecule_`date +%Y%m%d%H%M%S`.log && npm run lint:example > Lint_Example_`date +%Y%m%d%H%M%S`.log ",
+    "lint:molecules": "eslint --ext .js --ext .jsx molecules",
+    "lint:example": "eslint --ext .js --ext .jsx example",
     "lint:fixjs": "eslint --ext .js --ext .jsx src --fix"
   },
   "jest": {
@@ -92,7 +96,7 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint:prehook"
     }
   },
   "babel": {
