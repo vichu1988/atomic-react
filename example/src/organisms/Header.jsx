@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { Avatar, Logo } from '../molecules';
+import { Avatar, Logo } from '../../src/molecules/index';
 import './Header.css';
 import classnames from 'classnames';
 
@@ -31,8 +31,8 @@ Header.defaultProps = {
 
 Header.propTypes = {
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 

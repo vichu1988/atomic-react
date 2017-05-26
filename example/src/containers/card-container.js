@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCatelogCards } from './../actions/cardContainer-actions';
+import { fetchCatalogCards } from '../actions/cardContainer-actions';
 
-import CardContainer from './../organisms/CardContainer';
+import CardContainer from '../organisms/CardContainer';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    fetchCatelogCards
+    fetchCatalogCards
   }, dispatch);
 };
 

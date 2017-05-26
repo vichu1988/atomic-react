@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import './Footer.css';
 import classnames from 'classnames';
 
-const Footer = ({ ...props }) => {
+const Footer = (props) => {
   const { currentYear, links, theme } = props;
 
   return (
@@ -21,15 +21,15 @@ const Footer = ({ ...props }) => {
 Footer.propTypes = {
   /**
    * Links Array
-  */
+   */
   links: PropTypes.arrayOf(PropTypes.shape({})),
   /**
    * Current Year
-  */
+   */
   currentYear: PropTypes.number,
   /**
-  * Theme
-  */
+   * Theme
+   */
   theme: PropTypes.oneOf(['light', 'dark'])
 };
 

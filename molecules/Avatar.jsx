@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 
+// Import of Styles could be as simple as importing the file like given below.
 import './Avatar.css';
 
-const Avatar = ({ ...props }) => {
+const Avatar = (props) => {
   return (
     <img
       className="avatar"
@@ -17,15 +18,15 @@ const Avatar = ({ ...props }) => {
 Avatar.propTypes = {
   /**
    * Picture URL
-  */
+   */
   picUrl: PropTypes.string,
   /**
    * Alt Tag
-  */
+   */
   altTag: PropTypes.string,
   /**
    * Image Size
-  */
+   */
   size: PropTypes.number
 };
 

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import config from '../data/config.json';
+import config from '../../public/data/config.json';
 
 import './Logo.css';
 

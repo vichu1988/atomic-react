@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Card } from '../molecules';
+import { Card } from '../../src/molecules/index';
 
 /* import styles from './CardContainer.css'; */
 //  const cards = Array.from({ length: 3 }, (c) => card)

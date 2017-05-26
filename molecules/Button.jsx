@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import './Button.css';
 
-
 const Button = (props) => {
   return (
 
@@ -19,11 +18,11 @@ const Button = (props) => {
 Button.propTypes = {
   /**
    * onClick Function
-  */
+   */
   onClick: PropTypes.func,
   /**
    * Children
-  */
+   */
   children: PropTypes.string
 };
 export default Button;

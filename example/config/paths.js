@@ -1,6 +1,7 @@
-var path = require('path');
-var fs = require('fs');
-var url = require('url');
+const path = require('path');
+const fs = require('fs');
+const url = require('url');
+const envPublicUrl = process.env.PUBLIC_URL;
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebookincubator/create-react-app/issues/637
@@ -30,8 +31,6 @@ var nodePaths = (process.env.NODE_PATH || '')
   .filter(folder => !path.isAbsolute(folder))
   .map(resolveApp);
 
-var envPublicUrl = process.env.PUBLIC_URL;
-
 function ensureSlash(path, needsSlash) {
   var hasSlash = path.endsWith('/');
   if (hasSlash && !needsSlash) {
@@ -54,10 +53,10 @@ function getPublicUrl(appPackageJson) {
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 function getServedPath(appPackageJson) {
-  var publicUrl = getPublicUrl(appPackageJson);
-  var servedUrl = envPublicUrl || (
-    publicUrl ? url.parse(publicUrl).pathname : '/'
-  );
+  const publicUrl = getPublicUrl(appPackageJson);
+  const servedUrl = envPublicUrl || (
+      publicUrl ? url.parse(publicUrl).pathname : '/'
+    );
   return ensureSlash(servedUrl, true);
 }
 
@@ -66,11 +65,11 @@ module.exports = {
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('src/index.js'),
+  appIndexJs: resolveApp('example/src/index.js'),
   appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('src'),
+  appSrc: resolveApp('example/src'),
   yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveApp('src/setupTests.js'),
+  testsSetup: resolveApp('example/src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   ownNodeModules: resolveApp('node_modules'),
   nodePaths: nodePaths,
